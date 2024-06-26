@@ -1,0 +1,27 @@
+Primiero passo é criar um arquivo serverless.yaml, com as seguintes configurações:
+    comandos:
+        O nome da steck que será criada na no claud foration da aws, que é o recurso nativo para trabalhar com serverless
+        service: -> adicionar o nome da sua stack que será criada.
+
+        Vai indicar aqual fornecedor de serviço na nuvem que você vai usar
+        provider
+            name: -> o nome do provedor (aws, google, Microsoft)
+            runtime: a versão da linguagem usada (node.js, Python e etc)
+            stage: -> 
+            region -> região do seu serviço que vc vai estar trabalhando
+            memorySize: -> é a memória que a sua função lambda vai consumir
+            timeout: o tempo de execução da função
+
+        functions: -> é aonde suas funções vam ficar criadas.
+            handler: -> Colocar o nome da sua função
+                handler: -> é o caminho do seu arquivo onde está a função [handler: <nome_da_pasta>/<nome_do_arquivo[obs: sempre handler]>.<nome_da_função>]
+                description: -> uma descrição sobre o que a sua função faz
+                runtime: a versão da linguagem usada (node.js, Python e etc)[OBS: Caso já tenha informado no provider não é obrigatório]
+
+Anotações avulsas:
+    para rodar um container via bash
+        docker exec -it 6bbc41a59443 bash
+    para forçara a recriação do container
+        docker-compose up --build --force-recreate
+                
+                

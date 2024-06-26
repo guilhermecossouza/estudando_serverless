@@ -1,0 +1,25 @@
+service: sls-study-serverless
+
+provider:
+  name: aws
+  runtime: python3.10
+
+functions:
+  mensagens:
+    handler: my_functions/handler.mensagens
+    description: A função irá retornar uma mensagem
+    events:
+      - http:
+          path: mensagens
+          method: get  
+
+  mensagem_parabens:
+    handler: my_functions/handler.mensagem_parabens
+    description: mensagem de parabéns
+    events:
+      - http:
+          path: mensagem_parabens
+          method: get
+      
+
+      

@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  study-serverless:
+    build: ./app_serverless
+    environment:
+      AWS_ACCESS_KEY_ID: fakeKey
+      AWS_SECRET_ACCESS_KEY: fakeSecret
+    ports:
+      - "3000:3000"
