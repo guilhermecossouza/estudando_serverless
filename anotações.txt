@@ -17,11 +17,30 @@ Primiero passo é criar um arquivo serverless.yaml, com as seguintes configuraç
                 handler: -> é o caminho do seu arquivo onde está a função [handler: <nome_da_pasta>/<nome_do_arquivo[obs: sempre handler]>.<nome_da_função>]
                 description: -> uma descrição sobre o que a sua função faz
                 runtime: a versão da linguagem usada (node.js, Python e etc)[OBS: Caso já tenha informado no provider não é obrigatório]
+				events: -> Os eventos que acionam esta função
+		resources: Os "Recursos" que suas "Funções" usam. O AWS CloudFormation bruto entra aqui.
+
+	
+plugins:
+  - serverless-offline
+  - serverless-secrets
+
+Instalando plugins
+    serverless plugin install -n <plugin>
+    instalar manualmente
+        npm install --save-dev custom-serverless-plugin
+
+
+
+
+
 
 Anotações avulsas:
     para rodar um container via bash
         docker exec -it 6bbc41a59443 bash
     para forçara a recriação do container
         docker-compose up --build --force-recreate
-                
+
+
+                    
                 
